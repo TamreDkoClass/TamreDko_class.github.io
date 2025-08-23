@@ -3,34 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الدفع | رحلة تالتة ثانوي</title>
+  <title>الدفع | تمريضكو كلاس</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     :root {
-      --brown: #5A3A1B;
-      --green: #2A9D8F;
-      --orange: #E76F51;
-      --red: #E63946;
+      --primary-blue: #00B4D8; /* أزرق سماوي */
+      --secondary-red: #FF6B6B; /* أحمر فاتح */
+      --accent-green: #4CAF50; /* أخضر */
+      --background: #FFF9F4;
     }
-
     body { 
       font-family: 'Cairo', sans-serif; 
-      background: #FFF9F4; 
+      background: var(--background);
       margin:0;
       padding:0;
     }
-
     .card {
-      @apply bg-white rounded-2xl shadow-xl p-6 transition-transform duration-500;
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      border-top-width: 4px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       animation: floatCard 3s infinite ease-in-out;
     }
     .card:hover {
       transform: translateY(-12px) scale(1.05);
       box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     }
-
     @keyframes floatCard {
       0% { transform: translateY(0px) rotate(0deg); }
       25% { transform: translateY(-4px) rotate(-0.5deg); }
@@ -38,26 +41,33 @@
       75% { transform: translateY(-4px) rotate(-0.5deg); }
       100% { transform: translateY(0px) rotate(0deg); }
     }
-
     .pulse-button {
-      @apply fixed bottom-6 right-6 z-50 px-6 py-4 text-2xl font-extrabold rounded-3xl text-white shadow-lg;
-      background: linear-gradient(90deg, #E63946, #F4A261, #2A9D8F);
+      position: fixed;
+      bottom: 6rem;
+      right: 6rem;
+      z-index: 50;
+      padding: 1rem 1.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      border-radius: 1.5rem;
+      background: linear-gradient(90deg, var(--secondary-red), var(--accent-green), var(--primary-blue));
       background-size: 300% 300%;
       animation: pulseGradient 3s ease infinite, bounce 1s infinite;
-      box-shadow: 0 0 15px rgba(231,111,81,0.6), 0 0 25px rgba(231,111,81,0.4);
+      box-shadow: 0 0 15px rgba(255,107,107,0.6), 0 0 25px rgba(255,107,107,0.4);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0.85;
     }
     .pulse-button:hover {
-      transform: scale(1.15);
-      box-shadow: 0 0 25px rgba(231,111,81,0.8), 0 0 40px rgba(231,111,81,0.5);
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(255,107,107,0.8), 0 0 40px rgba(255,107,107,0.5);
+      opacity: 1;
     }
-
     @keyframes pulseGradient {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-
     @keyframes bounce {
       0%,100% { transform: translateY(0); }
       50% { transform: translateY(-8px); }
@@ -65,47 +75,90 @@
   </style>
 </head>
 <body>
-
 <!-- Hero Section -->
-<section class="bg-gradient-to-r from-[var(--brown)] to-[var(--green)] text-white text-center py-20" data-aos="zoom-in">
+<section class="bg-gradient-to-r from-[var(--primary-blue)] to-[var(--accent-green)] text-white text-center py-20" data-aos="zoom-in">
   <h1 class="text-5xl font-extrabold mb-6 animate-bounce">💳 سجل وابدأ رحلتك</h1>
-  <p class="text-lg max-w-2xl mx-auto">اختار وسيلة الدفع، ابعتلنا البيانات، وابدأ نظام المتابعة الذكية فورًا 🚀</p>
+  <p class="text-lg max-w-2xl mx-auto">اختار باقتك المفضلة، ابعتلنا البيانات، وابدأ نظام المتابعة الذكية فورًا 🚀</p>
 </section>
-
 <!-- Steps Section -->
 <section class="container mx-auto py-16 px-6 grid md:grid-cols-3 gap-8 text-center">
   <div class="card" data-aos="fade-up">
-    <h3 class="text-2xl font-bold mb-3 text-[var(--green)]">1️⃣ الدفع</h3>
+    <h3 class="text-2xl font-bold mb-3 text-[var(--primary-blue)]">1️⃣ الدفع</h3>
     <p>ادفع على فودافون كاش: <strong>01124145324</strong></p>
   </div>
   <div class="card" data-aos="fade-up" data-aos-delay="200">
-    <h3 class="text-2xl font-bold mb-3 text-[var(--orange)]">2️⃣ ارسال البيانات</h3>
+    <h3 class="text-2xl font-bold mb-3 text-[var(--secondary-red)]">2️⃣ ارسال البيانات</h3>
     <p>■ اسمك <br>■ رقمك <br>■ رقم ولي الأمر <br>■ المحافظة <br>■ صورة التحويل أو رقم العملية <br>■ اسم المدرس + مواعيد الدروس</p>
   </div>
   <div class="card" data-aos="fade-up" data-aos-delay="400">
-    <h3 class="text-2xl font-bold mb-3 text-[var(--brown)]">3️⃣ التفعيل</h3>
+    <h3 class="text-2xl font-bold mb-3 text-[var(--accent-green)]">3️⃣ التفعيل</h3>
     <p>أول ما توصلنا البيانات هيتم تفعيل النظام فورًا 💪</p>
   </div>
 </section>
-
 <!-- Warning -->
 <div class="container mx-auto text-center my-10 p-6 bg-[#FFF0E6] rounded-2xl shadow-lg" data-aos="flip-up">
-  <h3 class="text-xl font-bold text-[var(--red)] mb-3">📌 تنبيه مهم</h3>
+  <h3 class="text-xl font-bold text-[var(--secondary-red)] mb-3">📌 تنبيه مهم</h3>
   <p>بمجرد تأكيد الدفع وبدء التفعيل، لا يُسمح باسترجاع المبلغ؛ لأن المتابعة والتجهيزات تبدأ فورًا.</p>
 </div>
-
+<!-- Packages Section -->
+<section class="container mx-auto py-16 px-6">
+  <h2 class="text-3xl font-bold text-center mb-12 text-[var(--primary-blue)]">باقات المواد المنفردة</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <!-- باقة الرياضيات -->
+    <div class="card" data-aos="fade-right">
+      <div class="text-5xl mb-4 text-[var(--accent-green)]">📐</div>
+      <h3 class="text-xl font-bold mb-3 text-[var(--primary-blue)]">رياضيات</h3>
+      <p class="mb-4">الرياضيات للصفوف الثالثة الثانوي</p>
+      <ul class="list-disc pl-5 mb-6 space-y-2 text-gray-700">
+        <li>شرح مفصل لجميع الفصول</li>
+        <li>تدريبات يومية</li>
+        <li>اختبارات دورية</li>
+        <li>جروب دعم</li>
+      </ul>
+      <span class="btn bg-[var(--primary-blue)] hover:bg-[#0099cc]">350 جنيه</span>
+    </div>
+    
+    <!-- باقة العلوم -->
+    <div class="card" data-aos="fade-up">
+      <div class="text-5xl mb-4 text-[var(--secondary-red)]">🧬</div>
+      <h3 class="text-xl font-bold mb-3 text-[var(--primary-blue)]">علوم</h3>
+      <p class="mb-4">العلوم للصفوف الثالثة الثانوي</p>
+      <ul class="list-disc pl-5 mb-6 space-y-2 text-gray-700">
+        <li>شرح مفصل لجميع الفصول</li>
+        <li>تدريبات يومية</li>
+        <li>اختبارات دورية</li>
+        <li>جروب دعم</li>
+      </ul>
+      <span class="btn bg-[var(--primary-blue)] hover:bg-[#0099cc]">320 جنيه</span>
+    </div>
+    
+    <!-- باقة اللغة العربية -->
+    <div class="card" data-aos="fade-left">
+      <div class="text-5xl mb-4 text-[var(--accent-green)]">📚</div>
+      <h3 class="text-xl font-bold mb-3 text-[var(--primary-blue)]">لغة عربية</h3>
+      <p class="mb-4">اللغة العربية للصفوف الثالثة الثانوي</p>
+      <ul class="list-disc pl-5 mb-6 space-y-2 text-gray-700">
+        <li>شرح مفصل لجميع الفصول</li>
+        <li>تدريبات يومية</li>
+        <li>اختبارات دورية</li>
+        <li>جروب دعم</li>
+      </ul>
+      <span class="btn bg-[var(--primary-blue)] hover:bg-[#0099cc]">280 جنيه</span>
+    </div>
+  </div>
+</section>
 <!-- Features -->
 <section class="container mx-auto py-16 px-6 grid md:grid-cols-2 gap-8">
   <div class="card text-center" data-aos="fade-right">
-    <h3 class="text-xl font-bold mb-4 text-[var(--green)]">👥 جروب مخصص</h3>
+    <h3 class="text-xl font-bold mb-4 text-[var(--accent-green)]">👥 جروب مخصص</h3>
     <p>جروب للإجابة على أسئلتكم (السبت والثلاثاء من 8م – 10م).</p>
   </div>
   <div class="card text-center" data-aos="fade-left">
-    <h3 class="text-xl font-bold mb-4 text-[var(--orange)]">🗣 خصومات للأصحاب</h3>
+    <h3 class="text-xl font-bold mb-4 text-[var(--secondary-red)]">🗣 خصومات للأصحاب</h3>
     <p>اشترك مع أصحابك وخد خصم خاص ✨</p>
   </div>
   <div class="card text-center" data-aos="fade-right">
-    <h3 class="text-xl font-bold mb-4 text-[var(--brown)]">📆 عروض</h3>
+    <h3 class="text-xl font-bold mb-4 text-[var(--primary-blue)]">📆 عروض</h3>
     <p>خصومات على الاشتراك النص سنوي والسنوي.</p>
   </div>
   <div class="card text-center" data-aos="fade-left">
@@ -113,52 +166,19 @@
     <p>تبدأ معانا فور ما تبعت البيانات بدون انتظار.</p>
   </div>
 </section>
-
 <!-- Countdown -->
 <div class="text-center py-10" data-aos="zoom-in">
   <h3 class="text-2xl font-bold mb-4">⏳ عرض خاص بينتهي بعد:</h3>
-  <div id="countdown" class="text-3xl font-extrabold text-[var(--orange)]"></div>
+  <div id="countdown" class="text-3xl font-extrabold text-[var(--secondary-red)]"></div>
 </div>
-
-<!-- CTA ثابت لجميع الأجهزة -->
+<!-- CTA Button -->
 <a href="https://t.me/ThanaWay_team" target="_blank" 
-   class="pulse-button fixed bottom-6 right-6 z-50 text-xl sm:text-2xl font-extrabold rounded-3xl px-4 sm:px-6 py-3 sm:py-4 shadow-lg">
+   class="pulse-button text-xl sm:text-2xl font-extrabold rounded-3xl px-4 sm:px-6 py-3 sm:py-4 shadow-lg">
    📩 أرسل إيصال الدفع
 </a>
-
-<style>
-.pulse-button {
-  background: linear-gradient(90deg, #E63946, #F4A261, #2A9D8F);
-  background-size: 300% 300%;
-  animation: pulseGradient 3s ease infinite, bounce 1s infinite;
-  box-shadow: 0 0 10px rgba(231,111,81,0.4), 0 0 20px rgba(231,111,81,0.2);
-  color: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-  opacity: 0.85; /* الشفافية */
-}
-.pulse-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(231,111,81,0.6), 0 0 35px rgba(231,111,81,0.4);
-  opacity: 1; /* عند المرور تصبح أوضح */
-}
-
-@keyframes pulseGradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes bounce {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-</style>
-
-
-
 <!-- Footer -->
-<footer class="bg-[var(--brown)] text-white py-6 mt-16 text-center px-4" data-aos="fade-up">
-  <p>© 2025 جميع الحقوق محفوظة لموقع رحلة تالتة ثانوي</p>
+<footer class="bg-[var(--primary-blue)] text-white py-6 mt-16 text-center px-4" data-aos="fade-up">
+  <p>© 2025 جميع الحقوق محفوظة لموقع تمريضكو كلاس</p>
   <p class="mt-2">
     تصميم وتطوير: 
     <a href="https://t.me/A7MEDS3L3H" target="_blank" class="font-bold" style="color:#1DA1F2;">
@@ -166,35 +186,28 @@
     </a>
   </p>
 </footer>
-
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 1200, once: true });
-
   // العداد لينتهي يوم 2 من الشهر القادم الساعة 12 منتصف الليل
   const countdown = document.getElementById('countdown');
   const now = new Date();
   const nextMonth = now.getMonth() === 11 ? 0 : now.getMonth() + 1;
   const nextYear = now.getMonth() === 11 ? now.getFullYear() + 1 : now.getFullYear();
   const targetDate = new Date(nextYear, nextMonth, 2, 0, 0, 0).getTime();
-
   setInterval(() => {
     const now = new Date().getTime();
     const diff = targetDate - now;
-
     if(diff <= 0){
       countdown.innerHTML = "انتهى العرض 🎉";
       return;
     }
-
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const secs = Math.floor((diff % (1000 * 60)) / 1000);
-
     countdown.innerHTML = `${days} يوم ${hours} ساعة ${mins} دقيقة ${secs} ثانية`;
   }, 1000);
 </script>
-
 </body>
 </html>
