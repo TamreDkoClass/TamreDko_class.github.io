@@ -7,21 +7,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
     :root {
-      --primary-blue: #00B4D8; /* أزرق سماوي */
+ary-blue: #00B4D8; /* أزرق سماوي */
       --secondary-red: #FF6B6B; /* أحمر فاتح */
       --accent-green: #4CAF50; /* أخضر */
       --beige: #FCECDC;
     }
-    body { 
-      font-family: 'Cairo', sans-serif; 
-      background: var(--beige);
-      color: #333;
+
+    html, body {
+      font-family: 'Cairo', sans-serif;
       margin: 0;
       padding: 0;
-      overflow-x: hidden;
+      overflow-x: hidden; /* يمنع التمرير الأفقي */
+      background: #fdfdfd;
     }
+
     /* روابط الكمبيوتر */
     .nav-link {
       color: white;
@@ -36,6 +38,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
     /* روابط الموبايل */
     .mobile-link {
       color: white;
@@ -48,21 +51,23 @@
     .mobile-link:hover {
       background: white/10;
     }
+
     /* Buttons */
     .btn-detail {
-      background: var(--accent-green);
+      background: var(--cyan);
       color: white;
       font-weight: bold;
       padding: 0.5rem 1.25rem;
       border-radius: 0.75rem;
       font-size: 0.9rem;
-      box-shadow: 0 0 12px rgba(76, 175, 80, 0.5);
-      transition: transform 0.2s ease-in-out;
+      box-shadow: 0 0 12px rgba(42, 157, 143, 0.5);
+      transition: all 0.3s ease-in-out;
     }
     .btn-detail:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(76, 175, 80, 0.7);
+      box-shadow: 0 0 20px rgba(42, 157, 143, 0.7);
     }
+
     .social-btn {
       display: inline-block;
       padding: 0.75rem 1.5rem;
@@ -72,15 +77,19 @@
       margin: 0.5rem;
       transition: all 0.3s ease-in-out;
     }
-    .social-btn.telegram { background: var(--secondary-red); box-shadow: 0 0 15px rgba(255,107,107,0.5); }
-    .social-btn.bot { background: var(--accent-green); box-shadow: 0 0 15px rgba(76, 175, 80, 0.5); }
+    .social-btn.telegram { background: var(--orange); box-shadow: 0 0 15px rgba(244, 162, 97, 0.5); }
+    .social-btn.bot { background: var(--cyan); box-shadow: 0 0 15px rgba(42, 157, 143, 0.5); }
     .social-btn:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 0 25px rgba(0,0,0,0.2); }
+
+    img { max-width: 100%; height: auto; display: block; }
+
     /* Fade-in effect */
     @keyframes fadeIn {
       0% { opacity: 0; transform: translateY(-10px); }
       100% { opacity: 1; transform: translateY(0); }
     }
     .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+
     /* Animation للقائمة */
     @keyframes slideFade {
       0% { opacity: 0; transform: translateY(-10px); }
@@ -89,25 +98,31 @@
     .animate-slide-fade {
       animation: slideFade 0.4s ease forwards;
     }
+
   </style>
 </head>
+
 <body>
+
 <!-- Navbar -->
-<nav class="fixed w-full z-50 bg-[var(--primary-blue)]/80 backdrop-blur-md shadow-lg">
+<nav class="fixed w-full z-50 bg-[var(--brown)]/90 backdrop-blur-md shadow-lg">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
+
       <!-- شعار + اسم -->
       <a href="index.html" class="flex items-center space-x-3 transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
         <img src="images/logo-edu.jpg" alt="شعار" class="w-12 h-12 rounded-full shadow-lg">
         <h1 class="text-xl sm:text-2xl font-extrabold text-white drop-shadow-lg">تمريضكو كلاس</h1>
       </a>
+
       <!-- روابط الكمبيوتر -->
       <div class="hidden sm:flex flex-1 justify-center space-x-10">
         <a href="index.html" class="nav-link">الرئيسية</a>
-        <a href="course1.html" class="nav-link">نظام التأسيس</a>
+        <a href="course1.html" class="nav-link">جروب ال VIP</a>
         <a href="course2.html" class="nav-link">المتابعة الذكية</a>
         <a href="contact.html" class="nav-link">تواصل معنا</a>
       </div>
+
       <!-- زر الموبايل -->
       <div class="sm:hidden">
         <button id="mobile-menu-btn" class="focus:outline-none p-2 rounded-md hover:bg-white/10 transition">
@@ -116,111 +131,90 @@
           </svg>
         </button>
       </div>
+
     </div>
   </div>
+
   <!-- قائمة الموبايل -->
-  <div id="mobile-menu" class="hidden sm:hidden bg-[var(--primary-blue)]/95 backdrop-blur-md px-4 py-4 space-y-3 shadow-lg animate-slide-fade">
+  <div id="mobile-menu" class="hidden sm:hidden bg-[var(--brown)]/95 backdrop-blur-md px-4 py-4 space-y-3 shadow-lg animate-slide-fade">
     <a href="index.html" class="mobile-link">الرئيسية</a>
-    <a href="course1.html" class="mobile-link">نظام التأسيس</a>
+    <a href="course1.html" class="mobile-link">جروب ال VIP</a>
     <a href="course2.html" class="mobile-link">المتابعة الذكية</a>
     <a href="contact.html" class="mobile-link">تواصل معنا</a>
   </div>
 </nav>
+
 <script>
 const btn = document.getElementById('mobile-menu-btn');
 const menu = document.getElementById('mobile-menu');
 btn.addEventListener('click', () => { 
   menu.classList.toggle('hidden'); 
 });
+
+// Highlight الصفحة الحالية
+const links = document.querySelectorAll('.nav-link, .mobile-link');
+links.forEach(link => {
+  if (link.href === window.location.href) {
+    link.classList.add('text-yellow-400', 'font-bold');
+  }
+});
 </script>
-<!-- Hero -->
-<section class="relative text-center py-20 sm:py-24 bg-[color:var(--primary-blue)] text-white overflow-hidden animated-gradient" data-aos="zoom-in">
-  <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 sm:mb-6 animate-bounce drop-shadow-lg">🚀 ابدأ رحلتك للنجاح معانا</h2>
+
+<!-- Hero Section -->
+<section class="text-center py-20 sm:py-24 bg-[color:var(--brown)] text-white relative overflow-hidden">
+  <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 sm:mb-6 relative z-10" 
+      data-aos="zoom-in" data-aos-duration="1400">
+    ابدأ رحلتك للنجاح معانا 🚀
+  </h2>
   <p class="mb-6 sm:mb-10 text-base sm:text-lg md:text-xl relative z-10" 
      data-aos="fade-up" data-aos-delay="400">
     أفضل أنظمة تأسيس ومتابعة ذكية لطلاب الثانوية العامة
   </p>
 </section>
+
 <!-- Courses Section -->
 <section class="container mx-auto py-12 px-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6">
   <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="fade-right">
     <div class="p-5 sm:p-6">
-      <h3 class="text-xl sm:text-2xl font-bold text-[color:var(--primary-blue)] mb-2 sm:mb-3">📖 نظام التأسيس</h3>
+      <h3 class="text-xl sm:text-2xl font-bold text-[color:var(--brown)] mb-3 sm:mb-4">🎓 المتابعة الذكية</h3>
       <p class="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
-        ابدأ من الأساس بخطة 11 يوم تأسيسية مع تدريبات واختبارات يومية تساعدك تبني قاعدة قوية.
+        ذاكر أول بأول بخطة منظمة + متابعة شخصية وجروب أسئلة أسبوعيًا عشان تضمن تقدمك.
       </p>
-      <a href="course1.html" class="btn-detail text-sm sm:text-base">اعرف التفاصيل</a>
+      <a href="course2.html" class="btn-detail text-sm sm:text-base">اعرف التفاصيل</a>
     </div>
   </div>
+
   <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="fade-left">
     <div class="p-5 sm:p-6">
-      <h3 class="text-xl sm:text-2xl font-bold text-[color:var(--primary-blue)] mb-2 sm:mb-3">📚 شرح + تدريب + اختبار</h3>
+      <h3 class="text-xl sm:text-2xl font-bold text-[color:var(--brown)] mb-3 sm:mb-4">📚 نظام التأسيس</h3>
       <p class="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
         ابدأ من الأساس بخطة 11 يوم تأسيسية مع تدريبات واختبارات يومية تساعدك تبني قاعدة قوية.
       </p>
-      <a href="course2.html" class="btn-detail text-sm sm:text-base">اعرف التفاصيل</a>
-    </div>
-  </div>
-  <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="fade-up" data-aos-delay="400">
-    <div class="p-5 sm:p-6">
-      <h3 class="text-xl sm:text-2xl font-bold text-[color:var(--primary-blue)] mb-2 sm:mb-3">📅 بداية قوية</h3>
-      <p class="text-gray-700 mb-4 sm:mb-6">تضمن بداية منظمة وقوية قبل الامتحانات.</p>
       <a href="course1.html" class="btn-detail text-sm sm:text-base">اعرف التفاصيل</a>
-    </div>
-  </div>
-  <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="fade-up" data-aos-delay="600">
-    <div class="p-5 sm:p-6">
-      <h3 class="text-xl sm:text-2xl font-bold text-[color:var(--primary-blue)] mb-2 sm:mb-3">📤 تسليم مهام</h3>
-      <p class="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
-        تسليم واجباتك وتاسكاتك أول بأول مع متابعة من المدرس.
-      </p>
-      <a href="course2.html" class="btn-detail text-sm sm:text-base">اعرف التفاصيل</a>
-    </div>
-  </div>
-  <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="fade-up" data-aos-delay="800">
-    <div class="p-5 sm:p-6">
-      <h3 class="text-xl sm:text-2xl font-bold text-[color:var(--primary-blue)] mb-2 sm:mb-3">📅 جداول منظمة</h3>
-      <p class="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
-        جداول منظمة كل أسبوع لتنظيم يومك ومواعيد الحصص.
-      </p>
-      <a href="course1.html" class="btn-detail text-sm sm:text-base">اعرف التفاصيل</a>
-    </div>
-  </div>
-  <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="fade-up" data-aos-delay="1000">
-    <div class="p-5 sm:p-6">
-      <h3 class="text-xl sm:text-2xl font-bold text-[color:var(--primary-blue)] mb-2 sm:mb-3">👥 جروبات مخصصة</h3>
-      <p class="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
-        جروبات مخصصة للإجابة على أسئلتكم في كل مادة.
-      </p>
-      <a href="course2.html" class="btn-detail text-sm sm:text-base">اعرف التفاصيل</a>
     </div>
   </div>
 </section>
-<!-- Price Card -->
-<div class="mx-auto max-w-xl my-10 sm:my-16 relative" data-aos="zoom-in">
-  <div class="bg-white rounded-2xl shadow-2xl border-t-8 border-[#2A9D8F]">
-    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-[#2A9D8F] text-white px-4 sm:px-6 py-1 sm:py-2 rounded-full shadow-lg">
-      🎉 عرض خاص
-    </div>
-    <h3 class="text-2xl sm:text-3xl font-extrabold mb-2 sm:mb-4 text-[#E76F51]">💰 سعر الاشتراك</h3>
-    <p class="text-4xl sm:text-5xl font-extrabold text-[#2A9D8F] mb-2 sm:mb-4">50<span class="text-xl sm:text-2xl"> جنيه</span></p>
-    <p class="text-sm sm:text-lg text-gray-700 mt-2 sm:mt-4">اشترك دلوقتي واستفيد بكل المميزات</p>
-  </div>
-</div>
-<!-- CTA -->
-<div class="flex justify-center py-6 sm:py-10" data-aos="flip-up">    
-  <a href="payment.html" class="btn-detail text-sm sm:text-base">🚀 اشترك دلوقتي</a>    
-</div>
+
+<!-- Social Buttons -->
+<section class="text-center py-8" data-aos="zoom-in">
+  <a href="https://t.me/TamreDko_class" target="_blank" class="social-btn telegram">📢 قناة تمريضكو كلاس</a>
+  <a href="https://t.me/Tamredko_class_bot" target="_blank" class="social-btn bot">🤖 بوت تمريضكو كلاس</a>
+</section>
+
 <!-- Footer -->
-<footer class="bg-[color:var(--primary-blue)] text-white py-6 mt-16 text-center px-4" data-aos="fade-up">
-  <p>© 2025 جميع الحقوق محفوظة لموقع تمريضكو كلاس</p>
+<footer class="bg-[color:var(--brown)] text-white py-6 mt-16 text-center px-4" data-aos="fade-up">
+  <p>© 2026 جميع الحقوق محفوظة لموقع تمريضكو كلاس</p>
   <p class="mt-2">
     تصميم وتطوير: 
-    <a href="https://t.me/A7MEDS3L3H" target="_blank" class="font-bold" style="color:#1DA1F2;">
-      AHMED SALAH
-    </a>
+    <a href="https://t.me/omar_schofield" target="_blank" class="font-bold" style="color:#1DA1F2;">
+omar Schofield    </a>
   </p>
 </footer>
+
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1200, once: true });
+</script>
+
 </body>
 </html>
