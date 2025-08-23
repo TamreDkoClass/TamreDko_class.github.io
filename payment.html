@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الدفع | رحلة تالتة ثانوي</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --brown: #5A3A1B;
+      --green: #2A9D8F;
+      --orange: #E76F51;
+      --red: #E63946;
+    }
+
+    body { 
+      font-family: 'Cairo', sans-serif; 
+      background: #FFF9F4; 
+      margin:0;
+      padding:0;
+    }
+
+    .card {
+      @apply bg-white rounded-2xl shadow-xl p-6 transition-transform duration-500;
+      animation: floatCard 3s infinite ease-in-out;
+    }
+    .card:hover {
+      transform: translateY(-12px) scale(1.05);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    @keyframes floatCard {
+      0% { transform: translateY(0px) rotate(0deg); }
+      25% { transform: translateY(-4px) rotate(-0.5deg); }
+      50% { transform: translateY(-8px) rotate(0.5deg); }
+      75% { transform: translateY(-4px) rotate(-0.5deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+
+    .pulse-button {
+      @apply fixed bottom-6 right-6 z-50 px-6 py-4 text-2xl font-extrabold rounded-3xl text-white shadow-lg;
+      background: linear-gradient(90deg, #E63946, #F4A261, #2A9D8F);
+      background-size: 300% 300%;
+      animation: pulseGradient 3s ease infinite, bounce 1s infinite;
+      box-shadow: 0 0 15px rgba(231,111,81,0.6), 0 0 25px rgba(231,111,81,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .pulse-button:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 25px rgba(231,111,81,0.8), 0 0 40px rgba(231,111,81,0.5);
+    }
+
+    @keyframes pulseGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="bg-gradient-to-r from-[var(--brown)] to-[var(--green)] text-white text-center py-20" data-aos="zoom-in">
+  <h1 class="text-5xl font-extrabold mb-6 animate-bounce">💳 سجل وابدأ رحلتك</h1>
+  <p class="text-lg max-w-2xl mx-auto">اختار وسيلة الدفع، ابعتلنا البيانات، وابدأ نظام المتابعة الذكية فورًا 🚀</p>
+</section>
+
+<!-- Steps Section -->
+<section class="container mx-auto py-16 px-6 grid md:grid-cols-3 gap-8 text-center">
+  <div class="card" data-aos="fade-up">
+    <h3 class="text-2xl font-bold mb-3 text-[var(--green)]">1️⃣ الدفع</h3>
+    <p>ادفع على فودافون كاش: <strong>01124145324</strong></p>
+  </div>
+  <div class="card" data-aos="fade-up" data-aos-delay="200">
+    <h3 class="text-2xl font-bold mb-3 text-[var(--orange)]">2️⃣ ارسال البيانات</h3>
+    <p>■ اسمك <br>■ رقمك <br>■ رقم ولي الأمر <br>■ المحافظة <br>■ صورة التحويل أو رقم العملية <br>■ اسم المدرس + مواعيد الدروس</p>
+  </div>
+  <div class="card" data-aos="fade-up" data-aos-delay="400">
+    <h3 class="text-2xl font-bold mb-3 text-[var(--brown)]">3️⃣ التفعيل</h3>
+    <p>أول ما توصلنا البيانات هيتم تفعيل النظام فورًا 💪</p>
+  </div>
+</section>
+
+<!-- Warning -->
+<div class="container mx-auto text-center my-10 p-6 bg-[#FFF0E6] rounded-2xl shadow-lg" data-aos="flip-up">
+  <h3 class="text-xl font-bold text-[var(--red)] mb-3">📌 تنبيه مهم</h3>
+  <p>بمجرد تأكيد الدفع وبدء التفعيل، لا يُسمح باسترجاع المبلغ؛ لأن المتابعة والتجهيزات تبدأ فورًا.</p>
+</div>
+
+<!-- Features -->
+<section class="container mx-auto py-16 px-6 grid md:grid-cols-2 gap-8">
+  <div class="card text-center" data-aos="fade-right">
+    <h3 class="text-xl font-bold mb-4 text-[var(--green)]">👥 جروب مخصص</h3>
+    <p>جروب للإجابة على أسئلتكم (السبت والثلاثاء من 8م – 10م).</p>
+  </div>
+  <div class="card text-center" data-aos="fade-left">
+    <h3 class="text-xl font-bold mb-4 text-[var(--orange)]">🗣 خصومات للأصحاب</h3>
+    <p>اشترك مع أصحابك وخد خصم خاص ✨</p>
+  </div>
+  <div class="card text-center" data-aos="fade-right">
+    <h3 class="text-xl font-bold mb-4 text-[var(--brown)]">📆 عروض</h3>
+    <p>خصومات على الاشتراك النص سنوي والسنوي.</p>
+  </div>
+  <div class="card text-center" data-aos="fade-left">
+    <h3 class="text-xl font-bold mb-4 text-[#264653]">⚡ تفعيل سريع</h3>
+    <p>تبدأ معانا فور ما تبعت البيانات بدون انتظار.</p>
+  </div>
+</section>
+
+<!-- Countdown -->
+<div class="text-center py-10" data-aos="zoom-in">
+  <h3 class="text-2xl font-bold mb-4">⏳ عرض خاص بينتهي بعد:</h3>
+  <div id="countdown" class="text-3xl font-extrabold text-[var(--orange)]"></div>
+</div>
+
+<!-- CTA ثابت لجميع الأجهزة -->
+<a href="https://t.me/ThanaWay_team" target="_blank" 
+   class="pulse-button fixed bottom-6 right-6 z-50 text-xl sm:text-2xl font-extrabold rounded-3xl px-4 sm:px-6 py-3 sm:py-4 shadow-lg">
+   📩 أرسل إيصال الدفع
+</a>
+
+<style>
+.pulse-button {
+  background: linear-gradient(90deg, #E63946, #F4A261, #2A9D8F);
+  background-size: 300% 300%;
+  animation: pulseGradient 3s ease infinite, bounce 1s infinite;
+  box-shadow: 0 0 10px rgba(231,111,81,0.4), 0 0 20px rgba(231,111,81,0.2);
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  opacity: 0.85; /* الشفافية */
+}
+.pulse-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(231,111,81,0.6), 0 0 35px rgba(231,111,81,0.4);
+  opacity: 1; /* عند المرور تصبح أوضح */
+}
+
+@keyframes pulseGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+</style>
+
+
+
+<!-- Footer -->
+<footer class="bg-[var(--brown)] text-white py-6 mt-16 text-center px-4" data-aos="fade-up">
+  <p>© 2025 جميع الحقوق محفوظة لموقع رحلة تالتة ثانوي</p>
+  <p class="mt-2">
+    تصميم وتطوير: 
+    <a href="https://t.me/A7MEDS3L3H" target="_blank" class="font-bold" style="color:#1DA1F2;">
+      AHMED SALAH
+    </a>
+  </p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1200, once: true });
+
+  // العداد لينتهي يوم 2 من الشهر القادم الساعة 12 منتصف الليل
+  const countdown = document.getElementById('countdown');
+  const now = new Date();
+  const nextMonth = now.getMonth() === 11 ? 0 : now.getMonth() + 1;
+  const nextYear = now.getMonth() === 11 ? now.getFullYear() + 1 : now.getFullYear();
+  const targetDate = new Date(nextYear, nextMonth, 2, 0, 0, 0).getTime();
+
+  setInterval(() => {
+    const now = new Date().getTime();
+    const diff = targetDate - now;
+
+    if(diff <= 0){
+      countdown.innerHTML = "انتهى العرض 🎉";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+    countdown.innerHTML = `${days} يوم ${hours} ساعة ${mins} دقيقة ${secs} ثانية`;
+  }, 1000);
+</script>
+
+</body>
+</html>

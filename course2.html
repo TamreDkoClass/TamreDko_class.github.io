@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>المتابعة الذكية | رحلة تالتة ثانوي</title>  
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">  
+  <script src="https://cdn.tailwindcss.com"></script>  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">  
+
+  <style>
+    :root {
+      --brown: #5A3A1B;
+      --light-brown: #9b7b5c;
+      --orange: #F4A261;
+      --cyan: #793f0c;
+      --blue: #2563eb;
+      --green: #16a34a;
+      --pink: #db2777;
+    }
+
+    body { 
+      font-family: 'Cairo', sans-serif; 
+      background: #FCECDC;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* يمنع التمرير الأفقي */
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    .btn {
+      display: inline-block;
+      background: var(--orange);
+      color: #ffffff;
+      font-weight: bold;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      background: var(--cyan);
+    }
+
+    .card {
+      background: #fff;
+      color: #333;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: all 0.3s ease-in-out;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    }
+
+    .animated-gradient {
+      background: linear-gradient(270deg, var(--cyan), var(--orange), var(--brown));
+      background-size: 600% 600%;
+      animation: gradientAnimation 12s ease infinite;
+    }
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navbar احترافي -->
+<nav class="fixed w-full z-50 bg-[var(--brown)]/80 backdrop-blur-md shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- الشعار -->
+      <a href="index.html" class="flex items-center space-x-3 transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
+        <img src="images/logo-edu.jpg" alt="شعار" class="w-12 h-12 rounded-full shadow-lg">
+        <h1 class="text-xl sm:text-2xl font-extrabold text-white drop-shadow-lg">رحلة تالتة ثانوي</h1>
+      </a>
+
+      <!-- روابط الكمبيوتر -->
+      <div class="hidden sm:flex flex-1 justify-center space-x-10">
+        <a href="index.html" class="text-white font-semibold px-3 py-2 rounded-md hover:text-yellow-400 hover:bg-white/10 transition-all duration-300">الرئيسية</a>
+        <a href="course1.html" class="text-white font-semibold px-3 py-2 rounded-md hover:text-green-400 hover:bg-white/10 transition-all duration-300">نظام التأسيس</a>
+        <a href="course2.html" class="text-white font-semibold px-3 py-2 rounded-md hover:text-orange-400 hover:bg-white/10 transition-all duration-300">المتابعة الذكية</a>
+        <a href="contact.html" class="text-white font-semibold px-3 py-2 rounded-md hover:text-cyan-400 hover:bg-white/10 transition-all duration-300">تواصل معنا</a>
+      </div>
+
+      <!-- زر الموبايل -->
+      <div class="sm:hidden">
+        <button id="mobile-menu-btn" class="focus:outline-none p-2 rounded-md hover:bg-white/10 transition">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- قائمة الهواتف -->
+  <div id="mobile-menu" class="hidden sm:hidden bg-[var(--brown)]/95 backdrop-blur-md px-4 py-4 space-y-3 shadow-lg animate-slide-fade">
+    <a href="index.html" class="block text-white px-3 py-2 rounded-md hover:bg-white/10 transition">الرئيسية</a>
+    <a href="course1.html" class="block text-white px-3 py-2 rounded-md hover:bg-white/10 transition">نظام التأسيس</a>
+    <a href="course2.html" class="block text-white px-3 py-2 rounded-md hover:bg-white/10 transition">المتابعة الذكية</a>
+    <a href="contact.html" class="block text-white px-3 py-2 rounded-md hover:bg-white/10 transition">تواصل معنا</a>
+  </div>
+</nav>
+
+<script>
+const btn = document.getElementById('mobile-menu-btn');
+const menu = document.getElementById('mobile-menu');
+btn.addEventListener('click', () => { 
+  menu.classList.toggle('hidden'); 
+});
+</script>
+
+<style>
+@keyframes slideFade {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-fade {
+  animation: slideFade 0.4s ease forwards;
+}
+</style>
+
+<!-- Hero -->
+<section class="relative text-center py-20 sm:py-24 text-white overflow-hidden animated-gradient" data-aos="zoom-in">
+  <h2 class="text-3xl sm:text-6xl font-extrabold mb-4 sm:mb-6 animate-bounce drop-shadow-lg">🎯 المتابعة الذكية</h2>
+  <p class="text-base sm:text-xl max-w-xl mx-auto leading-relaxed drop-shadow">نظام يخليك دايمًا متابع ومستواك متطور كل يوم 💡</p>
+  <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
+    <svg class="relative block w-full h-12 sm:h-16" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1200 120">
+      <path d="M985.66 92.83C906.67 72 823.78 31 743.84 14.19 661.52-3.1 578.54-3.1 496.22 14.19 416.28 31 333.39 72 254.4 92.83c-89.56 22.87-179.11 22.87-268.67 0V120h1200V92.83c-89.56 22.87-179.11 22.87-268.67 0z" fill="#fff"></path>
+    </svg>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="container mx-auto py-10 sm:py-20 px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10">
+  <div class="card border-t-4 border-[color:var(--cyan)]" data-aos="fade-up">
+    <h3 class="text-xl sm:text-2xl font-bold text-[color:var(--cyan)] mb-2 sm:mb-3">📊 تقييم أسبوعي</h3>
+    <p>اختبارات وتقارير بتوضح مستواك بشكل دوري.</p>
+  </div>
+  <div class="card border-t-4 border-[color:var(--brown)]" data-aos="fade-up" data-aos-delay="200">
+    <h3 class="text-xl sm:text-2xl font-bold text-[color:var(--brown)] mb-2 sm:mb-3">📝 متابعة شخصية</h3>
+    <p>كل طالب ليه متابعة خاصة وتنبيهات مستمرة.</p>
+  </div>
+  <div class="card border-t-4 border-[color:var(--orange)]" data-aos="fade-up" data-aos-delay="400">
+    <h3 class="text-xl sm:text-2xl font-bold text-[color:var(--orange)] mb-2 sm:mb-3">🚀 خطة متطورة</h3>
+    <p>خطة متجددة حسب تقدمك لضمان أفضل نتيجة.</p>
+  </div>
+  <div class="card border-t-4 border-[color:var(--blue)]" data-aos="fade-up" data-aos-delay="600">
+    <h3 class="text-xl sm:text-2xl font-bold text-[color:var(--blue)] mb-2 sm:mb-3">📅 جداول منظمة</h3>
+    <p>جداول منظمة كل أسبوع لتنظيم يومك ومواعيد الحصص.</p>
+  </div>
+  <div class="card border-t-4 border-[color:var(--green)]" data-aos="fade-up" data-aos-delay="800">
+    <h3 class="text-xl sm:text-2xl font-bold text-[color:var(--green)] mb-2 sm:mb-3">🏆 شهادات تقدير</h3>
+    <p>شهادات تقدير على انتظامك واجتهادك طول السنة.</p>
+  </div>
+  <div class="card border-t-4 border-[color:var(--pink)]" data-aos="fade-up" data-aos-delay="1000">
+    <h3 class="text-xl sm:text-2xl font-bold text-[color:var(--pink)] mb-2 sm:mb-3">👥 جروبات مخصصة</h3>
+    <p>جروبات مخصصة للإجابة على أسئلتكم في كل مادة.</p>
+  </div>
+</section>
+
+<!-- Price Card -->
+<div class="mx-auto max-w-xl my-10 sm:my-16 relative" data-aos="zoom-in">
+  <div class="card text-center py-8 sm:py-12 px-4 sm:px-6 shadow-2xl border-t-8 border-[color:var(--orange)]">
+    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-[color:var(--orange)] text-white px-4 sm:px-6 py-1 sm:py-2 rounded-full text-sm sm:text-lg font-bold shadow-lg">
+      🤖 المتابعة الذكية
+    </div>
+    <h3 class="text-2xl sm:text-3xl font-extrabold mb-2 sm:mb-4 text-[color:var(--cyan)]">💰 سعر الاشتراك</h3>
+    <p class="text-xl sm:text-2xl text-gray-500 line-through mb-1">200 جنيه</p>
+    <p class="text-4xl sm:text-5xl font-extrabold text-[color:var(--orange)] mb-2 sm:mb-4">150<span class="text-xl sm:text-2xl"> جنيه</span></p>
+    <p class="text-sm sm:text-lg text-gray-700">🔥 خصم <span class="font-bold">25%</span> ساري لحد <span class="underline">2 / 9</span></p>
+    <p class="text-sm sm:text-lg text-gray-700 mt-2">اشترك دلوقتي واستفيد بكل المميزات</p>
+  </div>
+</div>
+
+<!-- CTA -->  
+<div class="flex justify-center py-6 sm:py-10" data-aos="flip-up">    
+  <a href="payment.html" class="btn">🚀 اشترك دلوقتي</a>    
+</div>  
+
+<!-- Footer -->
+<footer class="bg-[color:var(--brown)] text-white py-6 mt-16 text-center px-4" data-aos="fade-up">
+  <p>© 2025 جميع الحقوق محفوظة لموقع رحلة تالتة ثانوي</p>
+  <p class="mt-2">
+    تصميم وتطوير: 
+    <a href="https://t.me/A7MEDS3L3H" target="_blank" class="font-bold" style="color:#1DA1F2;">
+      AHMED SALAH
+    </a>
+  </p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1200, once: true });
+</script>
+
+</body>
+</html>

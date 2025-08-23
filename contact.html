@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تواصل معنا | رحلة تالتة ثانوي</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --brown: #5A3A1B;
+      --orange: #F4A261;
+      --cyan: #2A9D8F;
+      --beige: #FCECDC;
+    }
+
+    html, body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* يمنع التمرير الأفقي */
+      background: var(--beige);
+      color: #333;
+    }
+
+    nav a {
+      text-decoration: none;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      font-weight: bold;
+      color: #fff;
+      display: inline-block;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .btn:hover { transform: scale(1.05); }
+
+    .card {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      border-top-width: 4px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 640px) {
+      nav div.flex-col { width: 100%; }
+      nav a { width: 100%; text-align: center; }
+    }
+
+    /* Fade-in */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, var(--cyan), var(--orange));
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar احترافي -->
+<nav class="fixed w-full z-50 bg-[var(--brown)]/80 backdrop-blur-md shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- الشعار -->
+      <a href="index.html" class="flex items-center space-x-3 transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
+        <img src="images/logo-edu.jpg" alt="شعار" class="w-12 h-12 rounded-full shadow-lg">
+        <h1 class="text-xl sm:text-2xl font-extrabold text-white drop-shadow-lg">رحلة تالتة ثانوي</h1>
+      </a>
+
+      <!-- روابط الكمبيوتر -->
+      <div class="hidden sm:flex flex-1 justify-center space-x-10">
+        <a href="index.html" class="text-white font-semibold px-3 py-2 rounded-md hover:text-yellow-400 hover:bg-white/10 transition-all duration-300">الرئيسية</a>
+        <a href="course1.html" class="text-white font-semibold px-3 py-2 rounded-md hover:text-green-400 hover:bg-white/10 transition-all duration-300">نظام التأسيس</a>
+        <a href="course2.html" class="text-white font-semibold px-3 py-2 rounded-md hover:text-orange-400 hover:bg-white/10 transition-all duration-300">المتابعة الذكية</a>
+        <a href="contact.html" class="text-white font-semibold px-3 py-2 rounded-md hover:text-cyan-400 hover:bg-white/10 transition-all duration-300">تواصل معنا</a>
+      </div>
+
+      <!-- زر الموبايل -->
+      <div class="sm:hidden">
+        <button id="mobile-menu-btn" class="focus:outline-none p-2 rounded-md hover:bg-white/10 transition">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- قائمة الهواتف -->
+  <div id="mobile-menu" class="hidden sm:hidden bg-[var(--brown)]/95 backdrop-blur-md px-4 py-4 space-y-3 shadow-lg animate-slide-fade">
+    <a href="index.html" class="block text-white px-3 py-2 rounded-md hover:bg-white/10 transition">الرئيسية</a>
+    <a href="course1.html" class="block text-white px-3 py-2 rounded-md hover:bg-white/10 transition">نظام التأسيس</a>
+    <a href="course2.html" class="block text-white px-3 py-2 rounded-md hover:bg-white/10 transition">المتابعة الذكية</a>
+    <a href="contact.html" class="block text-white px-3 py-2 rounded-md hover:bg-white/10 transition">تواصل معنا</a>
+  </div>
+</nav>
+
+<script>
+const btn = document.getElementById('mobile-menu-btn');
+const menu = document.getElementById('mobile-menu');
+btn.addEventListener('click', () => { 
+  menu.classList.toggle('hidden'); 
+});
+</script>
+
+<style>
+@keyframes slideFade {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-fade {
+  animation: slideFade 0.4s ease forwards;
+}
+</style>
+
+
+<!-- Hero -->
+<section class="text-center py-20 gradient-bg text-white" data-aos="zoom-in">
+  <h2 class="text-5xl font-extrabold mb-6 animate-bounce">📞 تواصل معنا</h2>
+  <p class="text-lg sm:text-xl">لو عندك أي استفسار، إحنا معاك خطوة بخطوة 🤝</p>
+</section>
+
+<!-- Contact Options -->
+<section class="container mx-auto py-20 px-6 grid md:grid-cols-2 gap-10">
+  <!-- قناة التليجرام -->
+  <a href="https://t.me/Thana_Way" target="_blank" class="card text-center group">
+    <div class="text-5xl mb-4 group-hover:animate-bounce">📢</div>
+    <h3 class="text-2xl font-extrabold mb-2 text-[var(--cyan)]">قناة التليجرام</h3>
+    <p class="mb-6 text-gray-600 text-lg">انضم للقناة عشان توصلك كل التحديثات أول بأول 🚀</p>
+    <span class="btn bg-[var(--cyan)] hover:bg-[#21867a] inline-block">🔗 انضم الآن</span>
+  </a>
+
+  <!-- الدعم المباشر -->
+  <a href="https://t.me/ThanaWay_team" target="_blank" class="card text-center group">
+    <div class="text-5xl mb-4 group-hover:animate-bounce">🤝</div>
+    <h3 class="text-2xl font-extrabold mb-2 text-[var(--orange)]">الدعم المباشر</h3>
+    <p class="mb-6 text-gray-600 text-lg">لو محتاج مساعدة أو عندك استفسار 📝 راسلنا في أي وقت</p>
+    <span class="btn bg-[var(--orange)] hover:bg-[#d65b3e] inline-block">📞 راسلنا الآن</span>
+  </a>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[var(--brown)] text-white py-6 mt-16 text-center px-4" data-aos="fade-up">
+  <p>© 2025 جميع الحقوق محفوظة لموقع رحلة تالتة ثانوي</p>
+  <p class="mt-2">
+    تصميم وتطوير: 
+    <a href="https://t.me/A7MEDS3L3H" target="_blank" class="font-bold" style="color:#1DA1F2;">
+      AHMED SALAH
+    </a>
+  </p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1200, once: true });
+</script>
+
+</body>
+</html>
